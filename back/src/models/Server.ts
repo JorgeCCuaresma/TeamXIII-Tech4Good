@@ -8,6 +8,7 @@ dotenv.config();
 //ROUTES
 import authRoutes from "../routes/auth.routes";
 import errorRoutes from "../routes/error404.routes";
+import statRoutes from "../routes/stats.routes";
 
 //DB CONNECTION
 import mongoConnect from "../db/db.config"; 
@@ -20,6 +21,7 @@ class Server {
         auth: "/api/auth",
         users: "/api/users",
         docs: "/api-docs",
+        stats: "/api/stats",
         error: "/"
     };
 
@@ -39,7 +41,7 @@ class Server {
     }
 
     middlewares() {
-        this.app.use(cors());
+        this.app.use(cors({ origin: "*" }));
         this.app.use(express.json());
         this.app.use(express.urlencoded({extended:true}));
         this.app.use(helmet());
@@ -47,6 +49,7 @@ class Server {
 
     routes() {
         this.app.use(this.path.auth, authRoutes);
+        this.app.use(this.path.stats, statRoutes);
         this.app.use(this.path.error, errorRoutes);
     }
 

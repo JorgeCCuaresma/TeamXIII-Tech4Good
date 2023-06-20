@@ -26,13 +26,14 @@ export const userRegistration = async (req: Request, res: Response) => {
         const user = new User({ name, email, password, surName, neighborhood });
 
         user.password = encryptPassword(password);
-        await user.save();
+         const userCreated = await user.save();
 
         const token = await generateJWT(user.id);
 
         res.status(200).json({
             msg: "User correctly registered",
-            token
+            token,
+            userCreated
         });
 
     } catch (error) {

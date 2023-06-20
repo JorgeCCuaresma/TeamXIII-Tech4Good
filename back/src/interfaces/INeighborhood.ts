@@ -1,6 +1,6 @@
 export interface INeighborhood {
     _id:string;
-    districtId:number;
+    districtCode:number;
     districtName:string;
     neighborhoodCode:number;
     neighborhoodName:string;

@@ -33,6 +33,12 @@ Desgargue o clone el repositorio, abra su editor de código favorito y una termi
 ```
 Configure el archivo .env-template y cambie el nombre a .env
 
+```shell
+    # arranque la imagen de mongo en docker
+    npm run up
+```
+
+
 En el package.json se ha han incluido los scripts habituales para inicializar la aplicación.
 
 ```shell

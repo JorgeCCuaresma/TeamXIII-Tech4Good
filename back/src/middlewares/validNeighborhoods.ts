@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import barriosBarcelona from "../interfaces/Neighborhood";
+import barriosBarcelona from "../utils/Neighborhood";
 export const validNeighborhoods = (req: Request, res: Response, next: NextFunction) => {
     const { neighborhood } = req.body;
     const isArray = Array.isArray(neighborhood);

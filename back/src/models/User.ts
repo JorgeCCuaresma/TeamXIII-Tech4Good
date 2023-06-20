@@ -1,5 +1,7 @@
 import { Schema, model } from "mongoose";
 import { IUser } from "../interfaces/IUser";
+import barriosBarcelona from "../utils/Neighborhood";
+;
 
 const UserSchema = new Schema<IUser>({
     name: {
@@ -15,10 +17,16 @@ const UserSchema = new Schema<IUser>({
         type: String,
         required: [true, "Password is required"]
     },
-    neighborhood: {
+    neighborhood: [{
         type: String,
-        required: [true, "Neighborhood is required"]
-    },
+        required: [true, "Neighborhood is required"],
+        validate: {
+          validator: function (value: string) {
+            return barriosBarcelona.includes(value);
+          },
+          message: 'Invalid neighborhood'
+        }
+      }],
     img: {
         type: String
     },

@@ -43,6 +43,11 @@ const UserSchema = new Schema<IUser>({
     active: {
         type: Boolean,
         default: true
+    },
+    points: {
+        type: Number,
+        required: true,
+        default: 0
     }
 });
 

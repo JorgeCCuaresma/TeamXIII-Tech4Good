@@ -10,13 +10,14 @@ export const updateUser = async (req: Request, res: Response) => {
             msg: "User not found"
         });
     }
-    const { name, password, surName, neighborhood } = req.body;
+    const { name, password, surName, neighborhood, points } = req.body;
 
     const body = {
         name,
         password,
         surName,
         neighborhood,
+        points
     }
   if (body.password) body.password = encryptPassword(password);
 

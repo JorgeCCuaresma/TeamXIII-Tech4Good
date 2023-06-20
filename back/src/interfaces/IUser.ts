@@ -8,4 +8,5 @@ export interface IUser {
     img?: string;
     role: string;
     active: boolean;
+    points: number;
 }

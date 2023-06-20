@@ -4,7 +4,8 @@ export interface IUser {
     surName: string;
     email: string;
     password: string;
+    neighborhood: string;
     img?: string;
     role: string;
-    status: boolean;
+    active: boolean;
 }

@@ -7,7 +7,7 @@ import { encryptPassword, generateJWT, validEmail } from "../../helpers/index";
 export const userRegistration = async (req: Request, res: Response) => {
 
     try {
-        const { name, email, password, surName } = req.body;
+        const { name, email, password, surName, neighborhood } = req.body;
 
         const emailIsValid = validEmail(email);
         if (!emailIsValid) {
@@ -23,7 +23,7 @@ export const userRegistration = async (req: Request, res: Response) => {
             });
         }
 
-        const user = new User({ name, email, password, surName });
+        const user = new User({ name, email, password, surName, neighborhood });
 
         user.password = encryptPassword(password);
         await user.save();

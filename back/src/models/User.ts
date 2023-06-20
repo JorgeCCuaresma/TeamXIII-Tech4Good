@@ -1,7 +1,7 @@
 import { Schema, model } from "mongoose";
 import { IUser } from "../interfaces/IUser";
 
-const UserSchema = new Schema({
+const UserSchema = new Schema<IUser>({
     name: {
         type: String,
         required: [true, "Name is required"]
@@ -14,6 +14,10 @@ const UserSchema = new Schema({
     password: {
         type: String,
         required: [true, "Password is required"]
+    },
+    neighborhood: {
+        type: String,
+        required: [true, "Neighborhood is required"]
     },
     img: {
         type: String

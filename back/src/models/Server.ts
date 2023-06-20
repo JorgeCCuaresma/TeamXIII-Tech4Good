@@ -35,7 +35,6 @@ class Server {
 
     async connectDB() {
         await mongoConnect();
-        // await seeder();
     }
 
     middlewares() {

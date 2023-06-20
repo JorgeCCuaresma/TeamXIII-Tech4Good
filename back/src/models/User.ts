@@ -8,6 +8,10 @@ const UserSchema = new Schema<IUser>({
         type: String,
         required: [true, "Name is required"]
     },
+    surName: {
+        type: String,
+        required: [true, "SurName is required"]
+    },
     email: {
         type: String,
         required: [true, "Email is required"],

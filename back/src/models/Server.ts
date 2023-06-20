@@ -8,6 +8,7 @@ dotenv.config();
 //ROUTES
 import authRoutes from "../routes/auth.routes";
 import errorRoutes from "../routes/error404.routes";
+import userRoutes from "../routes/users.routes";
 
 //DB CONNECTION
 import mongoConnect from "../db/db.config"; 
@@ -47,7 +48,9 @@ class Server {
 
     routes() {
         this.app.use(this.path.auth, authRoutes);
+        this.app.use(this.path.users, userRoutes);
         this.app.use(this.path.error, errorRoutes);
+       
     }
 
     listen() {

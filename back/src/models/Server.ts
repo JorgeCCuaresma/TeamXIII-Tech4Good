@@ -11,7 +11,7 @@ import errorRoutes from "../routes/error404.routes";
 
 //DB CONNECTION
 import mongoConnect from "../db/db.config";
-import seeder from "../db/seed";
+// import seeder from "../db/seed";
 
 class Server {
     private app: Application;
@@ -35,7 +35,7 @@ class Server {
 
     async connectDB() {
         await mongoConnect();
-        await seeder();
+        // await seeder();
     }
 
     middlewares() {

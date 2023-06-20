@@ -3,7 +3,7 @@ import {encryptPassword} from "../helpers/index";
 
 const password = encryptPassword("123456");
 
-const data = [
+export const userData = [
     {
         name: "seed1",
         surName:"test1",
@@ -23,7 +23,4 @@ const data = [
         email: "seed3@test.com",
         password
     },
-
 ];
-
-export default data;

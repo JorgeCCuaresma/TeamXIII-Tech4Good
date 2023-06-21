@@ -21,7 +21,6 @@ class Server {
     private path = {
         auth: "/api/auth",
         users: "/api/users",
-        docs: "/api-docs",
         stats: "/api/stats",
         error: "/"
     };

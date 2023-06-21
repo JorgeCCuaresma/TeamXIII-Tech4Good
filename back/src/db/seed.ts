@@ -1,7 +1,7 @@
 import { Neighborhood } from "../models/Neighborhood";
 import { User } from "../models/User";
 
-import {userData} from "./userData.mock";
+import {userData} from "../data/userData.mock";
 import {hoodData} from "../data/hoodData";
 
 const seeder = async () => {

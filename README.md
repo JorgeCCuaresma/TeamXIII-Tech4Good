@@ -24,6 +24,7 @@ Several endpoints are made available:
 | POST   | {url} /api/auth | /login   | Checks the provided data against the existing DB and provides a token if valid.|  By a rate limiter middleware: 5 req / 10 min |
 |POST|{url} /api/users|/update/:id|Returns a user based on id. | Middleware prevents acces if user is not authenticated|
 |GET|{url} /api/stats|/all-hoods|Returns an array of objects with the neighborhoods and their score | Not specifically. Global protection with the helmet middleware against XSS |
+|ALL|/ "*"||Catches all non-defined routes and returns a 404 error.|Not specifically. Global protection with the helmet middleware against XSS|
 
 
 
@@ -50,20 +51,22 @@ You will need to have the following software locally.
     - Docker
 
 
-Desgargue o clone el repositorio, abra su editor de código favorito y una terminal e instale las dependencias necesarias con el comando:
+Download or clone the repository and install the necessary dependencies using the command:
 ```shell
     # install dependencies
     npm install
 ```
-Configure .env-template to .env
+
+
+Open your code editor and configure .env-template to .env.
+
+The package.json file includes the usual scripts to initialize the application.
+Run the 
 
 ```shell
     # start mongo image in Docker
     npm run up
 ```
-
-
-The package.json file includes the usual scripts to initialize the application.
 
 ```shell
     # start the application in development mode without previous transpilation
